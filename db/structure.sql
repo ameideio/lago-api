@@ -2225,6 +2225,7 @@ CREATE TABLE public.customers (
     subscription_invoice_issuing_date_anchor public.subscription_invoice_issuing_date_anchors,
     subscription_invoice_issuing_date_adjustment public.subscription_invoice_issuing_date_adjustments,
     awaiting_wallet_refresh boolean DEFAULT false NOT NULL,
+    dunning_currency_attempts jsonb DEFAULT '{}'::jsonb NOT NULL,
     CONSTRAINT check_customers_on_invoice_grace_period CHECK ((invoice_grace_period >= 0)),
     CONSTRAINT check_customers_on_net_payment_term CHECK ((net_payment_term >= 0))
 );
@@ -11782,6 +11783,7 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20260409161142'),
 ('20260409151451'),
 ('20260407091845'),
+('20260401143315'),
 ('20260331122448'),
 ('20260331103301'),
 ('20260327140626'),
