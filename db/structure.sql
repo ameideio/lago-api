@@ -569,7 +569,6 @@ DROP INDEX IF EXISTS public.index_fees_taxes_on_fee_id;
 DROP INDEX IF EXISTS public.index_fees_on_true_up_parent_fee_id;
 DROP INDEX IF EXISTS public.index_fees_on_subscription_id;
 DROP INDEX IF EXISTS public.index_fees_on_pay_in_advance_event_transaction_id;
-DROP INDEX IF EXISTS public.index_fees_on_original_fee_id;
 DROP INDEX IF EXISTS public.index_fees_on_organization_id;
 DROP INDEX IF EXISTS public.index_fees_on_invoiceable;
 DROP INDEX IF EXISTS public.index_fees_on_invoice_id;
@@ -3090,8 +3089,7 @@ CREATE TABLE public.fees (
     billing_entity_id uuid NOT NULL,
     precise_credit_notes_amount_cents numeric(30,5) DEFAULT 0.0 NOT NULL,
     fixed_charge_id uuid,
-    duplicated_in_advance boolean DEFAULT false,
-    original_fee_id uuid
+    duplicated_in_advance boolean DEFAULT false
 );
 
 
@@ -7681,13 +7679,6 @@ CREATE INDEX index_fees_on_organization_id ON public.fees USING btree (organizat
 
 
 --
--- Name: index_fees_on_original_fee_id; Type: INDEX; Schema: public; Owner: -
---
-
-CREATE INDEX index_fees_on_original_fee_id ON public.fees USING btree (original_fee_id);
-
-
---
 -- Name: index_fees_on_pay_in_advance_event_transaction_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -11803,7 +11794,6 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20260416124232'),
 ('20260416111923'),
 ('20260416111922'),
-('20260416150517'),
 ('20260415160654'),
 ('20260409161142'),
 ('20260409151451'),

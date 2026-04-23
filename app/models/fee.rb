@@ -361,7 +361,6 @@ end
 #  invoice_id                          :uuid
 #  invoiceable_id                      :uuid
 #  organization_id                     :uuid             not null
-#  original_fee_id                     :uuid
 #  pay_in_advance_event_id             :uuid
 #  pay_in_advance_event_transaction_id :string
 #  subscription_id                     :uuid
@@ -383,7 +382,6 @@ end
 #  index_fees_on_invoice_id                            (invoice_id)
 #  index_fees_on_invoiceable                           (invoiceable_type,invoiceable_id)
 #  index_fees_on_organization_id                       (organization_id)
-#  index_fees_on_original_fee_id                       (original_fee_id)
 #  index_fees_on_pay_in_advance_event_transaction_id   (pay_in_advance_event_transaction_id) WHERE (deleted_at IS NULL)
 #  index_fees_on_subscription_id                       (subscription_id)
 #  index_fees_on_true_up_parent_fee_id                 (true_up_parent_fee_id)
