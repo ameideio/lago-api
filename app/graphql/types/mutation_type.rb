@@ -202,6 +202,9 @@ module Types
     field :create_salesforce_integration, mutation: Mutations::Integrations::Salesforce::Create
     field :update_salesforce_integration, mutation: Mutations::Integrations::Salesforce::Update
 
+    field :oidc_accept_invite, mutation: Mutations::Auth::Oidc::AcceptInvite
+    field :oidc_authorize, mutation: Mutations::Auth::Oidc::Authorize
+    field :oidc_login, mutation: Mutations::Auth::Oidc::Login
     field :okta_accept_invite, mutation: Mutations::Auth::Okta::AcceptInvite
     field :okta_authorize, mutation: Mutations::Auth::Okta::Authorize
     field :okta_login, mutation: Mutations::Auth::Okta::Login

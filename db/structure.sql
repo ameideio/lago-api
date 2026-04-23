@@ -2883,7 +2883,7 @@ CREATE TABLE public.organizations (
     finalize_zero_amount_invoice boolean DEFAULT true NOT NULL,
     clickhouse_events_store boolean DEFAULT false NOT NULL,
     hmac_key character varying NOT NULL,
-    authentication_methods character varying[] DEFAULT '{email_password,google_oauth}'::character varying[] NOT NULL,
+    authentication_methods character varying[] DEFAULT '{email_password,google_oauth,oidc}'::character varying[] NOT NULL,
     audit_logs_period integer DEFAULT 30,
     pre_filter_events boolean DEFAULT false NOT NULL,
     clickhouse_deduplication_enabled boolean DEFAULT false NOT NULL,
@@ -11789,6 +11789,7 @@ ALTER TABLE ONLY public.membership_roles
 SET search_path TO "$user", public;
 
 INSERT INTO "schema_migrations" (version) VALUES
+('20260423223439'),
 ('20260420114717'),
 ('20260416124233'),
 ('20260416124232'),
@@ -12773,4 +12774,3 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20220530091046'),
 ('20220526101535'),
 ('20220525122759');
-
