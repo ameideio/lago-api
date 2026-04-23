@@ -391,7 +391,7 @@ RSpec.describe Organizations::UpdateService do
       let(:params) { {authentication_methods: ["email_password", "okta"]} }
       let(:user) { create(:user) }
       let(:additions) { ["okta"] }
-      let(:deletions) { ["google_oauth"] }
+      let(:deletions) { ["google_oauth", "oidc"] }
 
       before { create(:membership, organization:, roles: %i[admin], user:) }
 
