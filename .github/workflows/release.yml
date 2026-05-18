@@ -90,7 +90,7 @@ jobs:
 
   merge:
     name: Merge Images
-    runs-on: ubuntu-latest
+    runs-on: ${{ vars.AMEIDE_RUNS_ON }}
     needs: [build-images]
     steps:
       - name: Download Digests
@@ -135,7 +135,7 @@ jobs:
 
   notify:
     name: Notify Private Release
-    runs-on: ubuntu-latest
+    runs-on: ${{ vars.AMEIDE_RUNS_ON }}
     needs: [merge]
     steps:
       - name: Set version for dispatch
