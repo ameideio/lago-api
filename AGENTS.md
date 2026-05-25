@@ -8,6 +8,14 @@ This projects runs in docker container, managed with docker-compose.
 You must run `rspec` in the api container, use `lago exec api bundle exec rspec <args>`.
 You must use the `rails` cli in the container too, for example: `lago exec api bin/rails db:migrate`.
 
+## Coordinated release instructions
+
+- Do not finish at this repository's PR. Identify all affected Ameide repositories and own the coordinated change through merge.
+- Author or update `ameide-e2e` coverage when the change affects billing behavior, API behavior, authorization, routing, persistence, lifecycle behavior, or release evidence. If no e2e change is needed, state why existing coverage is sufficient.
+- After all required source and e2e PRs merge, confirm CI published immutable image digests for every changed artifact.
+- Confirm Kargo discovered Freight containing the intended coordinated artifact set; do not select Freight only because it is newest.
+- Select/request the intended Freight through Kargo. Do not hand-edit GitOps image pins.
+- Verify Argo CD reconciliation, Keptn lifecycle status, and Keptn-triggered Testkube evidence after promotion. Local tests, source CI, and ad hoc Testkube runs are diagnostics only.
 
 # General style
 
