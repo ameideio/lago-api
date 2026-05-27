@@ -90,7 +90,7 @@ jobs:
 
   merge:
     name: Merge Images
-    runs-on: ${{ vars.AMEIDE_RUNS_ON }}
+    runs-on: ${{ vars.AMEIDE_DIND_RUNS_ON }}
     needs: [build-images]
     steps:
       - name: Download Digests

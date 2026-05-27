@@ -12,7 +12,7 @@ on:
 permissions: {}
 jobs:
   build-api-image:
-    runs-on: ${{ vars.AMEIDE_RUNS_ON }}
+    runs-on: ${{ vars.AMEIDE_DIND_RUNS_ON }}
     name: Build API Image
     steps:
       - uses: actions/checkout@v4
