@@ -15,7 +15,7 @@ You must use the `rails` cli in the container too, for example: `lago exec api b
 - After all required source and e2e PRs merge, confirm CI published immutable image digests for every changed artifact.
 - Confirm Kargo discovered Freight containing the intended coordinated artifact set; do not select Freight only because it is newest.
 - Select/request the intended Freight through Kargo. Do not hand-edit GitOps image pins.
-- Verify Argo CD reconciliation, Keptn lifecycle status, and Keptn-triggered Testkube evidence after promotion. Local tests, source CI, and ad hoc Testkube runs are diagnostics only.
+- Verify Argo CD reconciliation, Keptn lifecycle status, and Kargo-triggered Testkube evidence after promotion. Local tests, source CI, and ad hoc Testkube runs are diagnostics only.
 
 # General style
 
